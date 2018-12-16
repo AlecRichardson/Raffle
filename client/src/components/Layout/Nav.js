@@ -46,21 +46,26 @@ class Nav extends Component {
       return true;
     } else {
       console.log("nav shouldcomp NO");
+      
+      
       return false;
+    
+    
     }
   };
 
   render() {
     console.log("nav render", this.state);
     const { activeItem } = this.state;
-    return (
-      <Container>
+    return (    
+    <Container>
         <div className="Navbar">
           <Container>
-            <h1 className="nav-title">Tutor Finder</h1>
+            <h1 className="nav-title"><img src='Raff!.svg
+            ' alt='Raff-logo'></img></h1>
           </Container>
           <Menu className="menu" borderless pointing secondary>
-            <Link to="/">
+          <Link to="/">
               <Menu.Item
                 as="span"
                 name="home"
@@ -68,27 +73,19 @@ class Nav extends Component {
                 onClick={this.handleItemClick}
               />
             </Link>
-            <Link to="/tutors">
+            <Link to="/raffles">
               <Menu.Item
                 as="span"
-                name="find tutors"
-                active={activeItem === "find tutors"}
+                name="Raffles"
+                active={activeItem === "raffles"}
                 onClick={this.handleItemClick}
               />
             </Link>
-            <Link to="/inbox">
+            <Link to="/dashboard">
               <Menu.Item
                 as="span"
-                name="inbox"
-                active={activeItem === "inbox"}
-                onClick={this.handleItemClick}
-              />
-            </Link>
-            <Link to="/profile">
-              <Menu.Item
-                as="span"
-                name="profile"
-                active={activeItem === "profile"}
+                name="dashboard"
+                active={activeItem === "dashboard"}
                 onClick={this.handleItemClick}
               />
             </Link>

@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const config = require("../../config.js");
 
 // Load Input Validation
 const validateRegisterInput = require("../../validation/register");
@@ -29,8 +28,6 @@ router.post("/register", (req, res) => {
       const newUser = new User({
         name: req.body.name,
         email: req.body.email,
-        gradeLevel: req.body.gradeLevel,
-        userType: req.body.userType,
         password: req.body.password
       });
 
@@ -64,7 +61,7 @@ router.post("/login", (req, res) => {
   User.findOne({ email }).then(user => {
     // Check for user
     if (!user) {
-      errors.email = "User not found";
+      errors.email = "Incorrect email or password.";
       return res.status(404).json(errors);
     }
 
@@ -83,7 +80,7 @@ router.post("/login", (req, res) => {
         // Sign Token
         jwt.sign(
           payload,
-          config.secretOrKey,
+          process.env.SECRET,
           { expiresIn: 3600 },
           (err, token) => {
             res.json({
@@ -93,7 +90,7 @@ router.post("/login", (req, res) => {
           }
         );
       } else {
-        errors.password = "Password incorrect";
+        errors.password = "Incorrect email or password.";
         return res.status(400).json(errors);
       }
     });

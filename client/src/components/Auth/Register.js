@@ -14,8 +14,6 @@ class Register extends Component {
     this.state = {
       fullname: "",
       email: "",
-      gradeLevel: "",
-      userType: "",
       password: "",
       password2: ""
     };
@@ -30,8 +28,6 @@ class Register extends Component {
     const newUser = {
       name: this.state.fullname,
       email: this.state.email,
-      gradeLevel: this.state.gradeLevel,
-      userType: this.state.userType,
       password: this.state.password,
       password2: this.state.password2
     };
@@ -59,7 +55,7 @@ class Register extends Component {
         <Form onSubmit={this.onSubmit}>
           <Form.Input
             className="formInput"
-            placeholder="Your Name..."
+            placeholder="Name"
             name="fullname"
             value={this.state.fullname}
             onChange={this.onChange}
@@ -68,7 +64,7 @@ class Register extends Component {
           {errors.email ? <div className="error">{errors.email}</div> : null}
           <Form.Input
             className="formInput"
-            placeholder="Email..."
+            placeholder="Email"
             name="email"
             type="email"
             value={this.state.email}
@@ -78,59 +74,11 @@ class Register extends Component {
           {errors.gradeLevel ? (
             <div className="error">{errors.gradeLevel}</div>
           ) : null}
-          <div>
-            <div className="formInput">
-              <Form.Field
-                control="select"
-                name="gradeLevel"
-                onChange={this.onChange}
-                error={Boolean(errors.gradeLevel)}
-              >
-                <option value="9">9th Grade</option>
-                <option value="10">10th Grade</option>
-                <option value="11">11th Grade</option>
-                <option value="12">12th Grade</option>
-                <option value="College">College</option>
-              </Form.Field>
-              {errors.userType ? (
-                <div className="error">{errors.userType}</div>
-              ) : null}
-            </div>
-          </div>
-          <div className="formInput">
-            <Form.Group inline>
-              <label>Type of User</label>
-              <Form.Radio
-                label="Student"
-                value="student"
-                name="userType"
-                checked={"student" === this.state.userType}
-                onChange={() => {
-                  this.handleChange(null, {
-                    value: "student",
-                    name: "userType"
-                  });
-                }}
-                error={Boolean(errors.userType)}
-              />
-              <Form.Radio
-                label="Tutor"
-                value="tutor"
-                name="userType"
-                checked={"tutor" === this.state.userType}
-                onChange={() => {
-                  this.handleChange(null, { value: "tutor", name: "userType" });
-                }}
-                error={Boolean(errors.userType)}
-              />
-            </Form.Group>
-            {errors.password ? (
-              <div className="error">{errors.password}</div>
-            ) : null}
-          </div>
+          
+          {errors.password ? <div className="error">{errors.password}</div> : null}
           <Form.Input
             className="formInput"
-            placeholder="Password..."
+            placeholder="Password"
             name="password"
             type="password"
             value={this.state.password}
@@ -142,7 +90,7 @@ class Register extends Component {
           ) : null}
           <Form.Input
             className="formInput"
-            placeholder="Confirm password..."
+            placeholder="Confirm password"
             name="password2"
             type="password"
             value={this.state.password2}
