@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import "./Nav.css";
 
+import logo from '../images/logo.svg'
+
 import { loginUser } from "../../Actions/User/UserAction";
 class Nav extends Component {
   constructor(props) {
@@ -61,8 +63,7 @@ class Nav extends Component {
     <Container>
         <div className="Navbar">
           <Container>
-            <h1 className="nav-title"><img src='Raff!.svg
-            ' alt='Raff-logo'></img></h1>
+            <h1 className="nav-title"><img src={logo} alt='Raff-logo'></img></h1>
           </Container>
           <Menu className="menu" borderless pointing secondary>
           <Link to="/">
