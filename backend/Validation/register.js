@@ -31,20 +31,6 @@ module.exports = function validateRegisterInput(data) {
     errors.gradeLevel = "Grade level field is required";
   }
 
-  // if (
-  //   data.gradeLevel != "9" ||
-  //   data.gradeLevel != "10" ||
-  //   data.gradeLevel != "11" ||
-  //   data.gradeLevel != "12" ||
-  //   data.gradeLevel != "college"
-  // ) {
-  //   errors.gradeLevel = "Grade level must be between 9-12 or college.";
-  // }
-
-  // if (data.userType != "student" || data.userType != "tutor") {
-  //   errors.userType = "User type field must be student or tutor.";
-  // }
-
   if (Validator.isEmpty(data.userType)) {
     errors.userType = "User type field is required";
   }

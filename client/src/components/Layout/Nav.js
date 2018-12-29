@@ -51,13 +51,12 @@ class Nav extends Component {
   };
 
   render() {
-    console.log("nav render", this.state);
     const { activeItem } = this.state;
     return (
       <Container>
         <div className="Navbar">
           <Container>
-            <h1 className="nav-title">Tutor Finder</h1>
+            <h1 className="nav-title">Giftify</h1>
           </Container>
           <Menu className="menu" borderless pointing secondary>
             <Link to="/">

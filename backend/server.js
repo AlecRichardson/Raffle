@@ -6,8 +6,6 @@ const cors = require("cors");
 
 // Import routes
 const users = require("./Routes/api/users");
-const tutors = require("./Routes/api/tutors");
-const chat = require("./Routes/api/chat");
 
 // Middleware
 const app = express();
@@ -28,8 +26,6 @@ mongoose
 /* * * * * API ROUTES * * * * * */
 
 app.use("/api/users", users);
-app.use("/api/tutors", tutors);
-app.use("/api/chat", chat);
 
 const port = process.env.PORT || 4000;
 
