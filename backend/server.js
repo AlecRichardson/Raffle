@@ -6,6 +6,7 @@ const cors = require("cors");
 
 // Import routes
 const users = require("./Routes/api/users");
+const raffle = require("./Routes/api/raffle");
 
 // Middleware
 const app = express();
@@ -26,6 +27,7 @@ mongoose
 /* * * * * API ROUTES * * * * * */
 
 app.use("/api/users", users);
+app.use("/api/raffle", raffle);
 
 const port = process.env.PORT || 4000;
 
