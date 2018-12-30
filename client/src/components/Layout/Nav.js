@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import "./Nav.css";
 
+import logo from "../images/logo.svg";
+
 import { loginUser } from "../../Actions/User/UserAction";
 class Nav extends Component {
   constructor(props) {
@@ -46,6 +48,7 @@ class Nav extends Component {
       return true;
     } else {
       console.log("nav shouldcomp NO");
+
       return false;
     }
   };
@@ -56,7 +59,9 @@ class Nav extends Component {
       <Container>
         <div className="Navbar">
           <Container>
-            <h1 className="nav-title">Giftify</h1>
+            <h1 className="nav-title">
+              <img src={logo} alt="Raff-logo" />
+            </h1>
           </Container>
           <Menu className="menu" borderless pointing secondary>
             <Link to="/">
@@ -67,27 +72,19 @@ class Nav extends Component {
                 onClick={this.handleItemClick}
               />
             </Link>
-            <Link to="/tutors">
+            <Link to="/raffles">
               <Menu.Item
                 as="span"
-                name="find tutors"
-                active={activeItem === "find tutors"}
+                name="Raffles"
+                active={activeItem === "raffles"}
                 onClick={this.handleItemClick}
               />
             </Link>
-            <Link to="/inbox">
+            <Link to="/dashboard">
               <Menu.Item
                 as="span"
-                name="inbox"
-                active={activeItem === "inbox"}
-                onClick={this.handleItemClick}
-              />
-            </Link>
-            <Link to="/profile">
-              <Menu.Item
-                as="span"
-                name="profile"
-                active={activeItem === "profile"}
+                name="dashboard"
+                active={activeItem === "dashboard"}
                 onClick={this.handleItemClick}
               />
             </Link>

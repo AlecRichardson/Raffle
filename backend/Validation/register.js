@@ -6,8 +6,6 @@ module.exports = function validateRegisterInput(data) {
 
   data.name = !isEmpty(data.name) ? data.name : "";
   data.email = !isEmpty(data.email) ? data.email : "";
-  data.gradeLevel = !isEmpty(data.gradeLevel) ? data.gradeLevel : "";
-  data.userType = !isEmpty(data.userType) ? data.userType : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
 
@@ -25,14 +23,6 @@ module.exports = function validateRegisterInput(data) {
 
   if (!Validator.isEmail(data.email)) {
     errors.email = "Email is invalid";
-  }
-
-  if (Validator.isEmpty(data.gradeLevel)) {
-    errors.gradeLevel = "Grade level field is required";
-  }
-
-  if (Validator.isEmpty(data.userType)) {
-    errors.userType = "User type field is required";
   }
 
   if (Validator.isEmpty(data.password)) {

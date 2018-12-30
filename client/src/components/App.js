@@ -12,9 +12,7 @@ import "semantic-ui-css/semantic.min.css";
 import Register from "./Auth/Register";
 import Login from "./Auth/Login";
 import Profile from "../components/Profile";
-import Tutor from "../components/Tutor";
-import ChatRoom from "../components/ChatRoom";
-import Inbox from '../components/Inbox';
+import Raffles from '../components/Raffles';
 
 class App extends Component {
   state = { users: [] };
@@ -31,6 +29,7 @@ class App extends Component {
           <Route exact path="/" component={Landing} />
           <Route exact path="/home" component={Landing} />
           <Route exact path="/register" component={Register} />
+          <Route exact path='/raffles' component={Raffles} />
           <Route
             exact
             path="/login"
@@ -39,9 +38,6 @@ class App extends Component {
             )}
           />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/tutors" component={Tutor} />
-          <Route exact path="/chat/:to" component={ChatRoom}/>
-          <Route exact path='/inbox/' component={Inbox}/>
           <Footer />
         </div>
       </Router>

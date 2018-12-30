@@ -74,7 +74,7 @@ class Login extends Component {
               ) : null}
               <Form.Input
                 className="formInput"
-                placeholder="Email..."
+                placeholder="Email"
                 name="email"
                 type="email"
                 value={this.state.email}
@@ -86,7 +86,7 @@ class Login extends Component {
               ) : null}
               <Form.Input
                 className="formInput"
-                placeholder="Password..."
+                placeholder="Password"
                 name="password"
                 type="password"
                 value={this.state.password}

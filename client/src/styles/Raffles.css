@@ -1,0 +1,27 @@
+.container{
+    max-width: 1130px;
+    margin: auto;
+}
+.raffles-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.raffle{
+    width: 30%;
+    padding: 1%;
+    border: 1px solid black;
+    margin: 1.5%;
+}
+.raffle-image{
+    width: 90%;
+    text-align: center;
+}
+.raffle-info{
+    display: flex;
+    margin: 0 5%;
+    flex-direction: row;
+    justify-content: space-between;
+}
